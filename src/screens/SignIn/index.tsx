@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { Text, View, Image, LayoutChangeEvent } from 'react-native'
 
@@ -11,6 +12,11 @@ type SignInProps = {
 }
 
 export function SignIn({ onLayout }: SignInProps) {
+  const navigation = useNavigation()
+
+  const handleSignIn = () => {
+    navigation.navigate('Home')
+  }
   return (
     <View style={styles.container} onLayout={onLayout}>
       <Image source={IllustrationImg} style={styles.image} resizeMode="stretch" />
@@ -23,7 +29,7 @@ export function SignIn({ onLayout }: SignInProps) {
           Crie grupos para jogar seus games {'\n'} favoritos com seus amigos
         </Text>
 
-        <ButtonIcon title="Entrar com Discord" activeOpacity={0.7} />
+        <ButtonIcon onPress={handleSignIn} title="Entrar com Discord" />
       </View>
     </View>
   )

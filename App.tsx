@@ -5,9 +5,8 @@ import * as SplashScreen from 'expo-splash-screen'
 import React, { useCallback } from 'react'
 import { StatusBar } from 'react-native'
 
-import { SignIn } from './src/screens/SignIn'
-
 import { Background } from '~/components/Background'
+import { Routes } from '~/routes'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -31,7 +30,7 @@ export default function App() {
   return (
     <Background>
       <StatusBar backgroundColor="transparent" translucent barStyle="light-content" />
-      <SignIn onLayout={onLayoutRootView} />
+      <Routes onLayout={onLayoutRootView} />
     </Background>
   )
 }
